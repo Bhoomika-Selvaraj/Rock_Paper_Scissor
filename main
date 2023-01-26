@@ -1,0 +1,95 @@
+import random
+
+def play():
+    rock="""
+        _______
+    ---'   ____)
+          (_____)
+          (_____)
+          (____)
+    ---.__(___)
+    """
+
+    paper="""
+         _______
+    ---'    ____)____
+               ______)
+              _______)
+             _______)
+    ---.__________)
+    """
+
+    scissors="""
+        _______
+    ---'   ____)____
+              ______)
+           __________)
+          (____)
+    ---.__(___)
+    """
+    game=(rock,paper,scissors)
+
+    human_choice=input("ROCK(R) OR PAPER(P) OR SCISSORS(S) : ")
+    if human_choice == 'R':
+        print("You chose : ")
+        print(game[0])
+    elif human_choice == 'P':
+        print("You chose : ")
+        print(game[1])
+    elif human_choice == 'S':
+        print("You chose : ")
+        print(game[2])
+    else:
+        print("Say something valid...you stupid!!")
+    exit
+
+    com_choice=random.randint(0,2)
+    print("Computer chose : ")
+    print(game[com_choice])
+
+    print()
+
+    if human_choice=='R':
+        if com_choice==2:
+            print("YOU WIN!!!")
+            print()
+        elif com_choice==1:
+            print("YOU LOSE!!!")
+            print()
+        elif com_choice==0:
+            print("IT\'S A DRAW!!!!")
+            print()
+    elif human_choice=='P':
+        if com_choice==2:
+            print("YOU LOSE!!!")
+            print()
+        elif com_choice==0:
+            print("YOU WIN!!!")
+            print()
+        elif com_choice==1:
+            print("IT\'S A DRAW!!!!")
+            print()
+    elif human_choice=='S':
+        if com_choice==0:
+            print("YOU LOSE!!!")
+            print()
+        if com_choice==1:
+            print("YOU WIN!!!")
+            print()
+        if com_choice==2:
+            print("IT\'S A DRAW!!!!")
+            print()
+    else:
+        print('BYE')
+
+play()
+print()
+
+while True:
+    choice=input("Wanna play again ? YES(Y)/NO(N) : ")
+    if choice=="Y":
+            play()
+    else:
+        print("Thanks for playing!!!C U LATER!!")
+        break
+
